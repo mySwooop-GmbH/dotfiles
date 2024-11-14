@@ -1,0 +1,12 @@
+# no more pesky installs and dependency conflicts with those handy aliases - put in .zshrc / .bashrc or whatever shell you use by default
+# feel free to extend and/or update
+
+DOCKER_SCOPE='docker run --rm -it --workdir /bind -v "$PWD":/bind '
+alias node="$DOCKER_SCOPE node:20-alpine3.19"
+alias npm="$DOCKER_SCOPE node:20-alpine3.19 npm"
+alias bun="$DOCKER_SCOPE oven/bun:1-alpine"
+alias deno="$DOCKER_SCOPE denoland/deno:alpine-2.0.6"
+alias php="$DOCKER_SCOPE php:8.2.25-cli-alpine3.20"
+alias php8.2="$DOCKER_SCOPE php:8.2.25-cli-alpine3.20"
+alias php8.3="$DOCKER_SCOPE php:8.3.13-cli-alpine3.20"
+alias composer="$DOCKER_SCOPE composer:2.2.24"
