@@ -1,0 +1,29 @@
+[core]
+        autocrlf = input
+[alias]
+        abort = reset --hard HEAD~1
+        flush = reset --hard HEAD
+        new = checkout -b
+        vomit = commit --no-verify -am
+        update = "!f(){ \
+                git fetch -p; \
+                git merge origin/main; \
+                };f"
+        cp = "!f(){ \
+                git commit -am \"$1\"; \
+                git push; \
+                };f"
+        pp = "!f(){ \
+                git pull; \
+                git push; \
+                };f"
+[pull]
+    rebase = false
+[core]
+    autocrlf = input
+[init]
+    defaultBranch = main
+[push]
+    autoSetupRemote = true
+[checkout]
+    defaultRemote = origin
