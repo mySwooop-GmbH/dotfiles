@@ -1,7 +1,7 @@
 # no more pesky installs and dependency conflicts with those handy aliases - put in .zshrc / .bashrc or whatever shell you use by default
 # feel free to extend and/or update
 
-DOCKER_SCOPE='docker run --rm -it --workdir /bind -v "$PWD":/bind '
+DOCKER_SCOPE='docker run --rm -it -u $(id -u):$(id -g) --workdir /bind -v "$PWD":/bind '
 alias node="$DOCKER_SCOPE node:20-alpine3.19"
 alias npm="$DOCKER_SCOPE node:20-alpine3.19 npm"
 alias bun="$DOCKER_SCOPE oven/bun:1-alpine"
